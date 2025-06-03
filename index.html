@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rozi & Eni – Wedding Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #fff3f7, #f0f6ff);
+            color: #2f2f2f;
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 70px 20px 40px;
+            background: linear-gradient(135deg, #fce4ec, #e3f2fd);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            color: #2f2f2f;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            color: #6b6b6b;
+        }
+
+        .couple-photo {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .couple-photo img {
+            max-width: 300px;
+            width: 80%;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            border: 4px solid #f9cbdc;
+        }
+
+        .section {
+            text-align: center;
+            padding: 60px 20px;
+            flex-grow: 1;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: #403f4c;
+        }
+
+        .section p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .rsvp {
+            background-color: #fce8f1;
+        }
+
+        iframe {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
+            height: 800px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ead7e5;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .flower {
+            position: fixed;
+            top: -50px;
+            z-index: 0;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            iframe {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Rozi & Eni</h1>
+        <p>We're Getting Married!</p>
+    </header>
+
+    <div class="couple-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Two_people_holding_hands_sunset.jpg/640px-Two_people_holding_hands_sunset.jpg"
+            alt="Rozi and Eni">
+    </div>
+
+    <main class="section">
+        <h2>Save the Date</h2>
+        <p>
+            Join us on <strong>September 12, 2025</strong> at
+            <strong><a href="http://maps.app.goo.gl/dLnvng1P3enURSDU9" target="_blank" style="color: #a64b6b;">Hoteli
+                    Gjuetisë</a></strong>,
+            Ishull Lezhë, Albania.<br>We would be honored by your presence.
+        </p>
+    </main>
+
+    <section class="section rsvp">
+        <h2>RSVP</h2>
+        <p>Please let us know if you'll be joining us!</p>
+        <iframe src="https://forms.gle/ijXsxekXV9B7ejDo7" allowfullscreen></iframe>
+    </section>
+
+    <footer>
+        © 2025 Rozi & Eni · Made with 💙 & 🌸
+    </footer>
+
+    <script>
+        const flowers = ["🌸", "🌷", "💮", "🌺"];
+        function createFlower() {
+            const flower = document.createElement("div");
+            flower.classList.add("flower");
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.animationDuration = 3 + Math.random() * 5 + "s";
+            flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+            document.body.appendChild(flower);
+            setTimeout(() => flower.remove(), 8000);
+        }
+        setInterval(createFlower, 300);
+    </script>
+
+</body>
+
+</html>
